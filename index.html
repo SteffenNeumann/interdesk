@@ -40,12 +40,16 @@
       </nav>
     </section>
 
-    <section class="hero ">
-      <h1 style="display: inline;"><span><i class="fa fa-check-square-o"></i></span>Deine Prozesse auf dem nächsten Level</h1>
-      <!--<h4>Fachgerechte Unterstützung jeden Tag</h4>-->
-      <h2 style="color:#7869E6;text-align: center;">Jetzt Digitalisierungsexperte werden!</h2>
-      <button class="btn-hover color-8" onclick="window.location.href ='#contact'">Direkt anfragen</button>
-     
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content-wrapper">
+        <h1>Willkommen bei<br><span class="hero-brand">interdesk</span></h1>
+        <p class="hero-subtitle">Entdecken Sie unsere Expertise in Webdesign,<br>Python-Programmierung<br>und professioneller MS Office Beratung.</p>
+        <div class="hero-buttons">
+          <button class="btn-hero-primary" onclick="window.location.href ='#about'">mehr erfahren</button>
+          <button class="btn-hero-secondary" onclick="window.location.href ='#contact'">contact</button>
+        </div>
+      </div>
     </section>
 
     <section class="about  w3-container" id="about">
@@ -60,41 +64,70 @@
     </section>
 
   
-    <section id="consulting" class="w3-container container consulting content">
-      <h2 style="text-align: center;margin-top:20px">- Was ich für Dich tun kann -</h2>
-      <div class="c-card w3-margin-top reveal">
-        <div><img src="content\4022164.jpg" width="100%" ></div>
-        <h3>Beratung</h3>
-        <p >Du fühlst Dich im "digitalen Dschungel" veloren?<br>
-          Ich gebe Dir Tipps um wieder die Kontrolle und Übersicht zu erlangen. </p>
-        
+    <section id="consulting" class="consulting content">
+      <h2 style="text-align: center;">- Was ich für Dich tun kann -</h2>
+      
+      <div class="c-card reveal">
+        <div class="c-card-image"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&q=80" alt="Business Consulting"></div>
+        <div class="c-card-content">
+          <div class="service-icon"><i class="fa fa-compass"></i></div>
+          <h3>Beratung</h3>
+          <p>Du fühlst Dich im "digitalen Dschungel" verloren? Ich gebe Dir Tipps um wieder die Kontrolle und Übersicht zu erlangen.</p>
+        </div>
       </div>
-      <div class="c-card c-card-right w3-margin-top reveal">
-         <div><img src="content\dataanalysis.jpg" width="100%" ></div>
-        <h3>Datenanalyse</h3>
-        <p>Erstellung von Datenanalysetools um Deine Kosten zu reduzieren.</p>
+      
+      <div class="c-card c-card-right reveal">
+        <div class="c-card-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80" alt="Data Analysis"></div>
+        <div class="c-card-content">
+          <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
+          <h3>Datenanalyse</h3>
+          <p>Erstellung von Datenanalysetools um Deine Kosten zu reduzieren.</p>
+        </div>
       </div>
-      <div class="c-card w3-margin-top reveal">
-        <div><img src="content\ideas.jpg" width="100%" ></div>        
-        <h3>Digitalisierung</h3>
-        <p style="text-align:left">Dein Desktop ist ein Chaos und 
-          Deine Dokumente und Papiere stapeln sich?<br>
-          Ich berate und unterstütze Dich bei Digitalisierung Deiner Prozesse. </p>
+      
+      <div class="c-card reveal">
+        <div class="c-card-image"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80" alt="Digital Transformation"></div>
+        <div class="c-card-content">
+          <div class="service-icon"><i class="fa fa-lightbulb-o"></i></div>
+          <h3>Digitalisierung</h3>
+          <p>Dein Desktop ist ein Chaos und Deine Dokumente und Papiere stapeln sich? Ich berate und unterstütze Dich bei Digitalisierung Deiner Prozesse.</p>
+        </div>
       </div>
-      <div class="c-card  c-card-right w3-margin-top reveal">
-        <div><img src="content\consulting_steps.jpg" width="100%" ></div>
-      <h3>Programmierung</h3>
-        <p>Erstellung individueller Software die auf Dein Unternehmen abgestimmt ist.</p>
+      
+      <div class="c-card c-card-right reveal">
+        <div class="c-card-image"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&q=80" alt="Programming"></div>
+        <div class="c-card-content">
+          <div class="service-icon"><i class="fa fa-code"></i></div>
+          <h3>Programmierung</h3>
+          <p>Erstellung individueller Software die auf Dein Unternehmen abgestimmt ist.</p>
+        </div>
       </div>
-      <div class="c-card w3-margin-top reveal">
-        <div><img src="content\costumer_access.jpg" width="100%" ></div>
-        <h3>Kontrolle</h3>
-        <p>Du erhälst Zugang zu Deinem Projekt in der Entwicklungsphase um immer auf dem aktuellen Stand zu bleiben.</p>
+      
+      <div class="c-card reveal">
+        <div class="c-card-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80" alt="Project Control"></div>
+        <div class="c-card-content">
+          <div class="service-icon"><i class="fa fa-eye"></i></div>
+          <h3>Kontrolle</h3>
+          <p>Du erhältst Zugang zu Deinem Projekt in der Entwicklungsphase um immer auf dem aktuellen Stand zu bleiben.</p>
+        </div>
       </div>
-      <div class="c-card  c-card-right w3-margin-top reveal">
-        <div><img src="content\success.jpg" width="100%" ></div>
-       <h3>Motivation</h3>
-        <p>Jeder Schritt führt zum Erfolg für Dich und Dein Team. </p>
+      
+      <div class="c-card c-card-right reveal">
+        <div class="c-card-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80" alt="Team Success"></div>
+        <div class="c-card-content">
+          <div class="service-icon"><i class="fa fa-rocket"></i></div>
+          <h3>Motivation</h3>
+          <p>Jeder Schritt führt zum Erfolg für Dich und Dein Team.</p>
+        </div>
+      </div>
+      
+      <div class="c-card reveal">
+        <div class="c-card-image"><img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop&q=80" alt="Excel VBA Programming"></div>
+        <div class="c-card-content">
+          <div class="service-icon"><i class="fa fa-file-excel-o"></i></div>
+          <h3>Excel & VBA Expertise</h3>
+          <p>Automatisierung wiederkehrender Prozesse mit VBA, um manuelle Arbeit und Fehler zu reduzieren. Professionelle Datenanalysen, Web-Scraping für Datenerfassung und Auswertung sowie individuelle Excel-Dashboards für optimale Übersicht.</p>
+        </div>
       </div>
     </section>
 
@@ -128,15 +161,12 @@
         <h2 >- Impressum -</h2>
       </div>
       <div class="footer-content">
-        <div style="align-self: center">
-            <img class="avatar " src="./content/Avatar6.png" alt="Avatar">
-         </div>
-        <div style="align-self: center;margin-left:20px">
-          <h5 >Kontakt: </h5>
+        <div>
+          <h5>Kontakt:</h5>
           <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
           <p style="margin-top:10px;">Steffen Neumann</p>
-          <p>   Münchner Straße 2b</p>
-          <p>   85467 Neuching</p>
+          <p>Münchner Straße 2b</p>
+          <p>85467 Neuching</p>
           <p style="margin-top:10px;">Tel: 08123/9809545</p>
           <p>E-Mail: interdesk24@gmail.com</p>   
         </div>
@@ -221,6 +251,16 @@
 }
 
 window.addEventListener("scroll", reveal);
+  </script>
+  
+  <script>
+    // Parallax effect for hero background
+    window.addEventListener('scroll', function() {
+      const hero = document.querySelector('.hero');
+      const scrollPosition = window.pageYOffset;
+      // Move background slower than scroll (0.5 = half speed)
+      hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    });
   </script>
   
   </body>
