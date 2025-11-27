@@ -26,7 +26,10 @@
         <div class="links">
           <a href="index.html#about" >Über mich</a>
           <a href="index.html#consulting" >Beratung</a>
-          <a href="index.html#contact" >Kontakt</a>            
+          <a href="index.html#contact" >Kontakt</a>
+          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <i class="fa fa-moon-o" id="theme-icon"></i>
+          </button>            
         </div>
         <div id="mobile-sidenav" class="mobile-links ">
           <a href="javascript:void(0)" class="closebtn w3-round" onclick="toggleMobileNavigation()">&times;</a>
@@ -125,6 +128,36 @@ E-Mail: interdesk24@gmail.com</p>
   </section>
 <script async>
       const backToTop = document.getElementById("back-to-top");
+
+      // Theme toggle functionality
+      function toggleTheme() {
+        const body = document.body;
+        const themeIcon = document.getElementById('theme-icon');
+        
+        body.classList.toggle('dark-theme');
+        
+        if (body.classList.contains('dark-theme')) {
+          themeIcon.classList.remove('fa-moon-o');
+          themeIcon.classList.add('fa-sun-o');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          themeIcon.classList.remove('fa-sun-o');
+          themeIcon.classList.add('fa-moon-o');
+          localStorage.setItem('theme', 'light');
+        }
+      }
+
+      // Load saved theme on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+          themeIcon.classList.remove('fa-moon-o');
+          themeIcon.classList.add('fa-sun-o');
+        }
+      });
 
       function toggleMobileNavigation() {
         const mobileNavigation = document.getElementById("mobile-sidenav");
