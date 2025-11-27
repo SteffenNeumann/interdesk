@@ -44,10 +44,11 @@
     </section>
 
     <section class="hero">
+      <canvas id="particle-canvas" class="particle-canvas"></canvas>
       <div class="hero-overlay"></div>
       <div class="hero-content-wrapper">
-        <h1>Willkommen bei<br><span class="hero-brand">interdesk</span></h1>
-        <p class="hero-subtitle">Entdecken Sie unsere Expertise in Webdesign,<br>Python-Programmierung<br>und professioneller MS Office Beratung.</p>
+        <h1>Willkommen bei<br><span class="hero-brand" id="typed-text"></span><span class="cursor" id="cursor">|</span></h1>
+        <p class="hero-subtitle" id="subtitle-text" style="opacity: 0;">Entdecken Sie unsere Expertise in Webdesign,<br>Python-Programmierung<br>und professioneller MS Office Beratung.</p>
         <div class="hero-buttons">
           <button class="btn-hero-primary" onclick="window.location.href ='#about'">mehr erfahren</button>
           <button class="btn-hero-secondary" onclick="window.location.href ='#contact'">contact</button>
@@ -177,9 +178,6 @@
      <div class="bottom">
         <div class="footer-links">
           <a href="./datenschutz.html" >datenschutz </a>
-           <a href="https://twitter.com/interdesk24" >twitter </a>
-           <!-- <a href="" >instagram </a>--->
-        
        </div>
        
      </div>
@@ -294,6 +292,140 @@ window.addEventListener("scroll", reveal);
       // Move background slower than scroll (0.5 = half speed)
       hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
     });
+  </script>
+  
+  <script>
+    // Particle Network Animation
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    // Particle settings
+    const particles = [];
+    const particleCount = 50;
+    const maxDistance = 150;
+    
+    // Get theme colors
+    function getParticleColor() {
+      return document.body.classList.contains('dark-theme') 
+        ? 'rgba(77, 212, 212, 0.4)' // Cyan for dark theme
+        : 'rgba(248, 122, 3, 0.3)';  // Orange for light theme
+    }
+    
+    function getLineColor() {
+      return document.body.classList.contains('dark-theme') 
+        ? 'rgba(77, 212, 212, 0.15)'
+        : 'rgba(248, 122, 3, 0.15)';
+    }
+    
+    // Particle class
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 2 + 1;
+      }
+      
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Bounce off edges
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+      
+      draw() {
+        ctx.fillStyle = getParticleColor();
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    // Create particles
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+    
+    // Draw connections
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < maxDistance) {
+            const opacity = 1 - (distance / maxDistance);
+            ctx.strokeStyle = getLineColor();
+            ctx.lineWidth = 1;
+            ctx.globalAlpha = opacity * 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+    }
+    
+    // Animation loop
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      drawConnections();
+      
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
+  </script>
+  
+  <script>
+    // Typing animation for hero text with auto-hide cursor
+    const textToType = 'interdesk';
+    const typedTextElement = document.getElementById('typed-text');
+    const subtitleElement = document.getElementById('subtitle-text');
+    const cursorElement = document.getElementById('cursor');
+    let charIndex = 0;
+    
+    function typeText() {
+      if (charIndex < textToType.length) {
+        typedTextElement.textContent += textToType.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, 150);
+      } else {
+        // Hide cursor after 2 seconds, then fade in subtitle
+        setTimeout(() => {
+          cursorElement.style.animation = 'none';
+          cursorElement.style.opacity = '0';
+          
+          setTimeout(() => {
+            subtitleElement.style.transition = 'opacity 1s ease';
+            subtitleElement.style.opacity = '1';
+          }, 500);
+        }, 2000);
+      }
+    }
+    
+    // Start typing after a short delay
+    setTimeout(typeText, 500);
   </script>
   
   </body>
