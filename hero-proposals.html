@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section Design Proposals - interdesk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f5f5f5;
+        }
+
+        .proposal-container {
+            margin: 50px auto;
+            max-width: 1400px;
+            padding: 20px;
+        }
+
+        .proposal-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 60px;
+        }
+
+        .proposal-section {
+            margin-bottom: 80px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .proposal-header {
+            background: linear-gradient(135deg, #7869E6 0%, #6d60ce 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .proposal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .proposal-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* PROPOSAL 1: Split Screen with Image Overlay */
+        .hero-proposal-1 {
+            position: relative;
+            min-height: 700px;
+            background: linear-gradient(135deg, rgba(120, 105, 230, 0.95) 0%, rgba(109, 96, 206, 0.92) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23667eea" width="1200" height="800"/><g fill-opacity="0.1"><circle fill="%23f5f5f5" cx="200" cy="150" r="120"/><circle fill="%23f5f5f5" cx="800" cy="400" r="180"/><circle fill="%23f5f5f5" cx="1000" cy="200" r="100"/><circle fill="%23f5f5f5" cx="400" cy="600" r="140"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 80px 5%;
+            color: white;
+        }
+
+        .hero-proposal-1 .hero-content {
+            max-width: 700px;
+            z-index: 2;
+        }
+
+        .hero-proposal-1 .tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            color: #ffd700;
+        }
+
+        .hero-proposal-1 h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .hero-proposal-1 h1 .highlight {
+            color: #ffd700;
+            display: block;
+            font-size: 4.5rem;
+        }
+
+        .hero-proposal-1 .subtitle {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-proposal-1 .cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-proposal-1 .btn-primary {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: white;
+            color: #7869E6;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-proposal-1 .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-proposal-1 .btn-secondary {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero-proposal-1 .btn-secondary:hover {
+            background: white;
+            color: #7869E6;
+            transform: translateY(-3px);
+        }
+
+        /* PROPOSAL 2: Minimal Centered with Accent Box */
+        .hero-proposal-2 {
+            position: relative;
+            min-height: 700px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 5%;
+            overflow: hidden;
+        }
+
+        .hero-proposal-2::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: linear-gradient(135deg, #7869E6 0%, #a29cff 100%);
+            border-radius: 50%;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        .hero-proposal-2::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 50%;
+            opacity: 0.06;
+            z-index: 0;
+        }
+
+        .hero-proposal-2 .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-proposal-2 .accent-box {
+            display: inline-block;
+            background: linear-gradient(135deg, #7869E6 0%, #6d60ce 100%);
+            padding: 12px 30px;
+            border-radius: 30px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 20px rgba(120, 105, 230, 0.3);
+        }
+
+        .hero-proposal-2 h1 {
+            font-size: 4.5rem;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .hero-proposal-2 h1 .highlight {
+            background: linear-gradient(135deg, #7869E6 0%, #a29cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-proposal-2 .subtitle {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .hero-proposal-2 .btn-primary {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #7869E6 0%, #6d60ce 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(120, 105, 230, 0.4);
+            margin: 0 10px;
+        }
+
+        .hero-proposal-2 .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(120, 105, 230, 0.5);
+        }
+
+        .hero-proposal-2 .features {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-proposal-2 .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .hero-proposal-2 .feature-item i {
+            color: #7869E6;
+            font-size: 1.5rem;
+        }
+
+        /* PROPOSAL 3: Dynamic Gradient Overlay */
+        .hero-proposal-3 {
+            position: relative;
+            min-height: 700px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            align-items: center;
+            padding: 100px 5%;
+            overflow: hidden;
+        }
+
+        .hero-proposal-3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 105, 230, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.2) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-proposal-3 .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-proposal-3 .label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .hero-proposal-3 .label .dot {
+            width: 8px;
+            height: 8px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero-proposal-3 h1 {
+            font-size: 4.2rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .hero-proposal-3 h1 .gradient-text {
+            background: linear-gradient(135deg, #7869E6 0%, #a29cff 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-proposal-3 .subtitle {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 45px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+        }
+
+        .hero-proposal-3 .stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 45px;
+            flex-wrap: wrap;
+        }
+
+        .hero-proposal-3 .stat-item {
+            text-align: left;
+        }
+
+        .hero-proposal-3 .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+        }
+
+        .hero-proposal-3 .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-proposal-3 .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-proposal-3 .btn-primary {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #7869E6 0%, #a29cff 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(120, 105, 230, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-proposal-3 .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .hero-proposal-3 .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .hero-proposal-3 .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(120, 105, 230, 0.6);
+        }
+
+        .hero-proposal-3 .btn-outline {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero-proposal-3 .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-proposal-1 h1,
+            .hero-proposal-2 h1,
+            .hero-proposal-3 h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-proposal-1 h1 .highlight {
+                font-size: 3rem;
+            }
+
+            .hero-proposal-1 .subtitle,
+            .hero-proposal-2 .subtitle,
+            .hero-proposal-3 .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-proposal-1 .cta-group,
+            .hero-proposal-3 .btn-group {
+                flex-direction: column;
+            }
+
+            .hero-proposal-1 .btn-primary,
+            .hero-proposal-1 .btn-secondary,
+            .hero-proposal-2 .btn-primary,
+            .hero-proposal-3 .btn-primary,
+            .hero-proposal-3 .btn-outline {
+                width: 100%;
+            }
+
+            .hero-proposal-2 .features {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-proposal-3 .stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-container">
+        <h1 class="proposal-title">🎨 Hero Section Design Proposals</h1>
+
+        <!-- PROPOSAL 1 -->
+        <div class="proposal-section">
+            <div class="proposal-header">
+                <h2>Proposal 1: Dynamic Gradient Overlay</h2>
+                <p>Energetic, bold design with split emphasis on value proposition</p>
+            </div>
+            <div class="hero-proposal-1">
+                <div class="hero-content">
+                    <div class="tagline">
+                        <i class="fa fa-check-square-o"></i> Digitalisierung
+                    </div>
+                    <h1>
+                        Deine Prozesse auf dem
+                        <span class="highlight">nächsten Level</span>
+                    </h1>
+                    <p class="subtitle">
+                        Professionelle Beratung für Webdesign, Python-Programmierung und MS Office Excellence. 
+                        Wir transformieren Ihre digitalen Workflows.
+                    </p>
+                    <div class="cta-group">
+                        <button class="btn-primary" onclick="alert('Navigation zu Kontakt')">
+                            Kostenlose Beratung
+                        </button>
+                        <button class="btn-secondary" onclick="alert('Navigation zu Portfolio')">
+                            Mehr erfahren
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROPOSAL 2 -->
+        <div class="proposal-section">
+            <div class="proposal-header">
+                <h2>Proposal 2: Minimal Centered Excellence</h2>
+                <p>Clean, professional design with subtle accent elements</p>
+            </div>
+            <div class="hero-proposal-2">
+                <div class="hero-content">
+                    <div class="accent-box">
+                        <i class="fa fa-rocket"></i> Digitale Transformation
+                    </div>
+                    <h1>
+                        Prozesse <span class="highlight">neu definiert</span> –<br>
+                        für Ihren Erfolg
+                    </h1>
+                    <p class="subtitle">
+                        Experte für Webdesign, Python-Programmierung und professionelle MS Office Beratung. 
+                        Individuelle Lösungen für Ihr Unternehmen.
+                    </p>
+                    <button class="btn-primary" onclick="alert('Navigation zu Kontakt')">
+                        <i class="fa fa-paper-plane"></i> Jetzt starten
+                    </button>
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>Beratung</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>Entwicklung</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa fa-check-circle"></i>
+                            <span>Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROPOSAL 3 -->
+        <div class="proposal-section">
+            <div class="proposal-header">
+                <h2>Proposal 3: Premium Dark Mode</h2>
+                <p>Modern, tech-forward design with dynamic elements and statistics</p>
+            </div>
+            <div class="hero-proposal-3">
+                <div class="hero-content">
+                    <div class="label">
+                        <span class="dot"></span>
+                        Verfügbar für neue Projekte
+                    </div>
+                    <h1>
+                        Digitalisierungs<span class="gradient-text">expert</span><br>
+                        für Ihre Prozesse
+                    </h1>
+                    <p class="subtitle">
+                        Professionelle Unterstützung in Webdesign, Python-Programmierung und MS Office. 
+                        Transformieren Sie Ihre Arbeitsabläufe mit maßgeschneiderten Lösungen.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projekte</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Jahre Erfahrung</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-primary" onclick="alert('Navigation zu Kontakt')">
+                            Projekt starten
+                        </button>
+                        <button class="btn-outline" onclick="alert('Navigation zu Portfolio')">
+                            Portfolio ansehen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
