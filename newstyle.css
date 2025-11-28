@@ -234,7 +234,7 @@ h3{
   display: block;
   transition: all 0.3s ease;
   text-align: center;
-  color: #2a2a2a;
+  color: var(--main-color);
   font-weight: 600;
   position: relative;
 }
@@ -297,7 +297,7 @@ h3{
   position: absolute;
   right: 20px;
   top: 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   border: none;
   background: var(--sub-color);
@@ -309,19 +309,20 @@ h3{
   justify-content: center;
   transition: all 0.3s ease;
   cursor: pointer;
-  text-decoration: none;
   padding: 0;
-  box-shadow: 0 4px 12px rgba(248, 122, 3, 0.3);
+  box-shadow: 0 4px 12px rgba(248, 122, 3, 0.4);
+  font-family: Arial, sans-serif;
+}
+
+.mobile-links .closebtn i {
+  font-size: 1.5rem;
+  color: white;
 }
 
 .mobile-links .closebtn:hover {
   background: var(--main-color);
   transform: rotate(90deg) scale(1.1);
-  box-shadow: 0 6px 16px rgba(44, 102, 110, 0.4);
-}
-
-.mobile-links .closebtn::before {
-  display: none;
+  box-shadow: 0 6px 16px rgba(44, 102, 110, 0.5);
 }
 
 /*Hero*/
