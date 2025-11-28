@@ -229,20 +229,22 @@ h3{
 }
 
 .mobile-theme-toggle {
-  margin: 30px auto 20px;
-  padding: 12px 30px;
-  background: linear-gradient(135deg, var(--main-color) 0%, rgba(44, 102, 110, 0.8) 100%);
-  border: 2px solid rgba(248, 122, 3, 0.3);
-  border-radius: 12px;
+  margin: 40px auto 30px;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, var(--main-color) 0%, rgba(44, 102, 110, 0.9) 100%);
+  border: 2px solid var(--sub-color);
+  border-radius: 16px;
   color: white;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(44, 102, 110, 0.3);
+  box-shadow: 0 6px 20px rgba(44, 102, 110, 0.4);
+  width: 85%;
 }
 
 .mobile-theme-toggle i {
