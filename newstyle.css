@@ -225,9 +225,36 @@ h3{
 }
 
 .mobile-links a:hover{
-/*color: #7869E6*/
-
+  color: var(--sub-color);
 }
+
+.mobile-theme-toggle {
+  margin: 30px auto 20px;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, var(--main-color) 0%, rgba(44, 102, 110, 0.8) 100%);
+  border: 2px solid rgba(248, 122, 3, 0.3);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(44, 102, 110, 0.3);
+}
+
+.mobile-theme-toggle i {
+  font-size: 1.2rem;
+}
+
+.mobile-theme-toggle:hover {
+  background: linear-gradient(135deg, rgba(248, 122, 3, 0.9) 0%, var(--sub-color) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(248, 122, 3, 0.4);
+}
+
 .mobile-links .closebtn {
   font-size: var(--font-2x-large);
   color:rgb(18, 19, 18,0.7);
@@ -1018,7 +1045,7 @@ letter-spacing: 1px;
 }
 
 .dark-theme .content h2 {
-  color: #4dd4d4;
+  color: var(--main-color);
 }
 
 .dark-theme .content h3 {
@@ -1240,35 +1267,48 @@ formButton{
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .hero-brand {
-    font-size: 2.8rem;
+    font-size: 2.5rem !important;
+  }
+  
+  .cursor {
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 30px;
+    line-height: 1.6;
   }
 
   .hero-buttons {
     flex-direction: column;
+    gap: 15px;
   }
 
   .btn-hero-primary,
   .btn-hero-secondary {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
+    padding: 16px 40px;
+    font-size: 1rem;
   }
 
   .content.container,
   .leadership-content.container {
-    width: 100%;
+    width: 95%;
+    padding: 40px 30px;
   }
 
   .container {
-    width: 80%;
+    width: 90%;
+  }
+  
+  .about {
+    padding: 60px 0 40px;
   }
 
   .l-cards {
@@ -1298,6 +1338,14 @@ formButton{
   
   .c-card img {
     min-height: 250px;
+  }
+  
+  .consulting.content {
+    padding: 60px 15px;
+  }
+  
+  .contact {
+    padding: 80px 0;
   }
 
   .mySlides {

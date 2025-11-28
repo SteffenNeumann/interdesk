@@ -38,7 +38,11 @@
           <a href="#about" onclick="toggleMobileNavigation()">Über mich</a>
           <a href="#consulting" onclick="toggleMobileNavigation()">Beratung</a>
           <a href="#contact" onclick="toggleMobileNavigation()">Kontakt</a>
-           <a href="#footer" onclick="toggleMobileNavigation()">Impressum</a>
+          <a href="#footer" onclick="toggleMobileNavigation()">Impressum</a>
+          <button id="mobile-theme-toggle" class="mobile-theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <i class="fa fa-moon-o" id="mobile-theme-icon"></i>
+            <span>Theme</span>
+          </button>
         </div>
       </nav>
     </section>
@@ -192,16 +196,25 @@
       function toggleTheme() {
         const body = document.body;
         const themeIcon = document.getElementById('theme-icon');
+        const mobileThemeIcon = document.getElementById('mobile-theme-icon');
         
         body.classList.toggle('dark-theme');
         
         if (body.classList.contains('dark-theme')) {
           themeIcon.classList.remove('fa-moon-o');
           themeIcon.classList.add('fa-sun-o');
+          if (mobileThemeIcon) {
+            mobileThemeIcon.classList.remove('fa-moon-o');
+            mobileThemeIcon.classList.add('fa-sun-o');
+          }
           localStorage.setItem('theme', 'dark');
         } else {
           themeIcon.classList.remove('fa-sun-o');
           themeIcon.classList.add('fa-moon-o');
+          if (mobileThemeIcon) {
+            mobileThemeIcon.classList.remove('fa-sun-o');
+            mobileThemeIcon.classList.add('fa-moon-o');
+          }
           localStorage.setItem('theme', 'light');
         }
       }
@@ -210,11 +223,16 @@
       document.addEventListener('DOMContentLoaded', function() {
         const savedTheme = localStorage.getItem('theme');
         const themeIcon = document.getElementById('theme-icon');
+        const mobileThemeIcon = document.getElementById('mobile-theme-icon');
         
         if (savedTheme === 'dark') {
           document.body.classList.add('dark-theme');
           themeIcon.classList.remove('fa-moon-o');
           themeIcon.classList.add('fa-sun-o');
+          if (mobileThemeIcon) {
+            mobileThemeIcon.classList.remove('fa-moon-o');
+            mobileThemeIcon.classList.add('fa-sun-o');
+          }
         }
       });
 
