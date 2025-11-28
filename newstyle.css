@@ -234,9 +234,13 @@ h3{
   display: block;
   transition: all 0.3s ease;
   text-align: center;
-  color: var(--main-color);
+  color: var(--main-color) !important;
   font-weight: 600;
   position: relative;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--main-color) !important;
+  background-clip: unset !important;
 }
 
 .mobile-links a::before {
@@ -323,6 +327,11 @@ h3{
   background: var(--main-color);
   transform: rotate(90deg) scale(1.1);
   box-shadow: 0 6px 16px rgba(44, 102, 110, 0.5);
+}
+
+.mobile-links .closebtn::before,
+.mobile-links .closebtn::after {
+  display: none !important;
 }
 
 /*Hero*/
