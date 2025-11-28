@@ -234,8 +234,8 @@ h3{
   display: block;
   transition: all 0.3s ease;
   text-align: center;
-  color: #333;
-  font-weight: 500;
+  color: #2a2a2a;
+  font-weight: 600;
   position: relative;
 }
 
@@ -298,9 +298,9 @@ h3{
   right: 20px;
   top: 20px;
   font-size: 2rem;
-  color: var(--sub-color);
+  color: white;
   border: none;
-  background: rgba(248, 122, 3, 0.1);
+  background: var(--sub-color);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -311,12 +311,13 @@ h3{
   cursor: pointer;
   text-decoration: none;
   padding: 0;
+  box-shadow: 0 4px 12px rgba(248, 122, 3, 0.3);
 }
 
 .mobile-links .closebtn:hover {
-  background: var(--sub-color);
-  color: white;
-  transform: rotate(90deg);
+  background: var(--main-color);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 16px rgba(44, 102, 110, 0.4);
 }
 
 .mobile-links .closebtn::before {
@@ -1100,13 +1101,15 @@ letter-spacing: 1px;
 }
 
 .dark-theme .mobile-links .closebtn {
-  background: rgba(248, 122, 3, 0.15);
-  color: var(--sub-color);
+  background: var(--sub-color);
+  color: #0f1419;
+  box-shadow: 0 4px 12px rgba(248, 122, 3, 0.4);
 }
 
 .dark-theme .mobile-links .closebtn:hover {
-  background: var(--sub-color);
+  background: #4dd4d4;
   color: #0f1419;
+  box-shadow: 0 6px 16px rgba(77, 212, 212, 0.5);
 }
 
 .dark-theme .mobile-theme-toggle {
