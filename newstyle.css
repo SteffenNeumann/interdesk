@@ -1699,49 +1699,106 @@ formButton{
     width: 100%;
   }
 
-  .c-card {
-    grid-template-columns: 1fr;
-    gap: 0;
+  /* Mobile card front: vertical stack layout */
+  .card-front {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: unset;
   }
   
-  .c-card-right {
-    grid-template-columns: 1fr;
+  .c-card-image {
+    width: 100%;
+    height: 200px;
+    order: 1;
   }
   
-  .c-card-right .c-card-content {
-    order: 0;
-  }
-  
-  .c-card-right > div:first-child {
-    order: 0;
+  .c-card-content {
+    width: 100%;
+    order: 2;
+    padding: 35px 25px;
   }
   
   .c-card img {
-    min-height: 250px;
+    min-height: 200px;
+    max-height: 200px;
   }
   
+  /* Mobile card back: optimized for small screens */
   .card-back-banner {
-    height: 120px;
+    height: 140px;
   }
   
   .card-back-content {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
   
   .card-back-content h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
   
+  .card-back-content p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  
+  .benefit-list li {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    padding-left: 30px;
+  }
+  
+  .benefit-list li::before {
+    font-size: 1rem;
+  }
+  
+  /* Mobile zoomed card */
   .c-card.zoomed {
-    width: 95% !important;
-    height: 90vh !important;
+    width: 100% !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+  }
+  
+  .c-card.zoomed .card-flip-container {
+    border-radius: 0;
+  }
+  
+  .c-card.zoomed .card-back {
+    border-radius: 0;
   }
   
   .btn-close-card {
-    top: 15px;
-    left: 15px;
-    width: 45px;
-    height: 45px;
+    top: 12px;
+    left: 12px;
+    width: 42px;
+    height: 42px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .btn-mehr-erfahren {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .service-icon i {
+    font-size: 1.6rem;
+  }
+  
+  .c-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .c-card p {
+    font-size: 1rem;
+    line-height: 1.7;
   }
   
   .consulting.content {
