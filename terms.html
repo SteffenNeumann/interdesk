@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>interdesk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="newstyle.css">
+  </head>
+  <body>
+  <main class="main-content" role="main">
+    <section class="navigation w3-metro-light-blue w3-container">
+      <button onclick="goToTop()" id="back-to-top" title="Go to top"><i class="fa fa-toggle-up"></i></button>
+      <nav class="nav-container">
+        <div class="logo"> 
+          <p onclick="window.location.href='index.html'">interdesk</p>
+        </div>
+        <div class="mobile-button">
+          <span style="float: right;" onclick="toggleMobileNavigation()">&#9776;</span>
+        </div>
+        <div class="links">
+          <a href="index.html#about" >Über mich</a>
+          <a href="index.html#consulting" >Beratung</a>
+          <a href="index.html#contact" >Kontakt</a>
+          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <i class="fa fa-moon-o" id="theme-icon"></i>
+          </button>            
+        </div>
+        <div id="mobile-sidenav" class="mobile-links ">
+          <button class="closebtn" onclick="toggleMobileNavigation()" aria-label="Close menu">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="mobile-logo">interdesk</div>
+          <a href="index.html#about" onclick="toggleMobileNavigation()">Über mich</a>
+          <a href="index.html#consulting" onclick="toggleMobileNavigation()">Beratung</a>
+          <a href="index.html#contact" onclick="toggleMobileNavigation()">Kontakt</a>
+          <button id="mobile-theme-toggle" class="mobile-theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <i class="fa fa-moon-o" id="mobile-theme-icon"></i>
+            <span>Theme</span>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <section class="main_impressum">
+      <div class="container" style="max-width: 900px; padding: 80px 20px;">
+        <div class="content a-link">
+          <h1>Nutzungsbedingungen</h1>
+          <p style="margin-top: 10px; color: #666;">Stand: 21. Januar 2026</p>
+
+          <h2>1. Geltungsbereich</h2>
+          <p>Diese Nutzungsbedingungen regeln die Nutzung der Website und der Online-Dienste von interdesk (nachfolgend „Anbieter“). Mit dem Zugriff auf die Website erkennen Sie diese Bedingungen als verbindlich an.</p>
+
+          <h2>2. Anbieter</h2>
+          <p>Steffen Neumann<br>Münchner Straße 28b<br>85467 Neuching<br>E-Mail: info@myinterdesk.net</p>
+
+          <h2>3. Leistungsbeschreibung</h2>
+          <p>Der Anbieter stellt Informationen, Inhalte und Kontaktmöglichkeiten rund um Beratungs- und Entwicklungsleistungen bereit. Ein Anspruch auf bestimmte Funktionen oder Verfügbarkeiten besteht nicht.</p>
+
+          <h2>4. Vertragsschluss</h2>
+          <p>Die Darstellung von Leistungen stellt kein verbindliches Angebot dar. Ein Vertrag kommt erst durch schriftliche Bestätigung oder individuelle Vereinbarung zustande.</p>
+
+          <h2>5. Preise und Zahlungsbedingungen</h2>
+          <p>Sofern Leistungen kostenpflichtig angeboten werden, ergeben sich Preise und Zahlungsbedingungen aus dem jeweiligen Angebot oder Vertrag.</p>
+
+          <h2>6. Nutzerpflichten</h2>
+          <ul>
+            <li>Sie dürfen die Website nur im Rahmen der geltenden Gesetze nutzen.</li>
+            <li>Sie dürfen keine Inhalte einstellen, die rechtswidrig, beleidigend, diskriminierend oder verletzend sind.</li>
+            <li>Sie dürfen keine Sicherheitsmechanismen umgehen oder den Betrieb der Website stören.</li>
+          </ul>
+
+          <h2>7. Verbotene Nutzung</h2>
+          <ul>
+            <li>Automatisiertes Auslesen, Scraping oder massenhafte Anfragen ohne Zustimmung.</li>
+            <li>Verbreitung von Schadsoftware, Spam oder Phishing.</li>
+            <li>Unbefugte Nutzung von Marken, Logos oder Inhalten des Anbieters.</li>
+          </ul>
+
+          <h2>8. Inhalte und Rechte</h2>
+          <p>Alle Inhalte (Texte, Grafiken, Logos, Bilder) unterliegen dem Urheberrecht. Eine Nutzung außerhalb der Website ist nur mit vorheriger schriftlicher Zustimmung des Anbieters erlaubt.</p>
+
+          <h2>9. Verfügbarkeit und Änderungen</h2>
+          <p>Der Anbieter ist bemüht, die Website kontinuierlich verfügbar zu halten. Wartungen, Sicherheitsupdates oder höhere Gewalt können zu Ausfällen führen. Der Anbieter kann Inhalte jederzeit anpassen oder entfernen.</p>
+
+          <h2>10. Haftung</h2>
+          <p>Der Anbieter haftet nur bei Vorsatz oder grober Fahrlässigkeit. Bei leichter Fahrlässigkeit haftet der Anbieter nur für die Verletzung wesentlicher Vertragspflichten und beschränkt auf den typischerweise vorhersehbaren Schaden. Die Haftung für entgangenen Gewinn ist ausgeschlossen. Die gesetzlichen Haftungsregeln, insbesondere bei Personenschäden, bleiben unberührt.</p>
+
+          <h2>11. Externe Links</h2>
+          <p>Diese Website kann Links zu externen Seiten enthalten. Für deren Inhalte ist der jeweilige Anbieter verantwortlich. Eine permanente Kontrolle externer Inhalte ist ohne konkrete Anhaltspunkte nicht zumutbar.</p>
+
+          <h2>12. Datenschutz</h2>
+          <p>Informationen zur Verarbeitung personenbezogener Daten finden Sie in der <a href="./datenschutz.html">Datenschutzerklärung</a>.</p>
+
+          <h2>13. Änderungen der Nutzungsbedingungen</h2>
+          <p>Der Anbieter kann diese Nutzungsbedingungen anpassen, wenn dies zur rechtlichen oder technischen Aktualisierung erforderlich ist. Es gilt die jeweils aktuelle Fassung.</p>
+
+          <h2>14. Schlussbestimmungen</h2>
+          <p>Es gilt deutsches Recht. Sollten einzelne Bestimmungen unwirksam sein, bleiben die übrigen Regelungen davon unberührt.</p>
+
+          <h2>15. Kontakt</h2>
+          <p>Bei Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns unter info@myinterdesk.net.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="footer">
+    <footer class="footer">
+      <div class="footer-head">
+        <h2>- Impressum -</h2>
+      </div>
+      <div class="footer-content">
+        <div>
+          <h5>Kontakt:</h5>
+          <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
+          <p style="margin-top:10px;">Steffen Neumann</p>
+          <p>Münchner Straße 28b</p>
+          <p>85467 Neuching</p>
+          <p style="margin-top:10px;">Tel: 08123/9809545</p>
+          <p>E-Mail: info@myinterdesk.net</p>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="footer-links">
+          <a href="./datenschutz.html">datenschutz</a>
+          <a href="./terms.html">nutzungsbedingungen</a>
+        </div>
+      </div>
+      <span>© 2022 interdesk. All rights reserved.</span>
+    </footer>
+  </section>
+
+  <script async>
+      const backToTop = document.getElementById("back-to-top");
+
+      // Theme toggle functionality
+      function toggleTheme() {
+        const body = document.body;
+        const themeIcon = document.getElementById('theme-icon');
+        const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+        
+        body.classList.toggle('dark-theme');
+        
+        if (body.classList.contains('dark-theme')) {
+          themeIcon.classList.remove('fa-moon-o');
+          themeIcon.classList.add('fa-sun-o');
+          if (mobileThemeIcon) {
+            mobileThemeIcon.classList.remove('fa-moon-o');
+            mobileThemeIcon.classList.add('fa-sun-o');
+          }
+          localStorage.setItem('theme', 'dark');
+        } else {
+          themeIcon.classList.remove('fa-sun-o');
+          themeIcon.classList.add('fa-moon-o');
+          if (mobileThemeIcon) {
+            mobileThemeIcon.classList.remove('fa-sun-o');
+            mobileThemeIcon.classList.add('fa-moon-o');
+          }
+          localStorage.setItem('theme', 'light');
+        }
+      }
+
+      // Load saved theme on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        const themeIcon = document.getElementById('theme-icon');
+        const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+        
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+          themeIcon.classList.remove('fa-moon-o');
+          themeIcon.classList.add('fa-sun-o');
+          if (mobileThemeIcon) {
+            mobileThemeIcon.classList.remove('fa-moon-o');
+            mobileThemeIcon.classList.add('fa-sun-o');
+          }
+        }
+      });
+
+      function toggleMobileNavigation() {
+        const mobileNavigation = document.getElementById("mobile-sidenav");
+        mobileNavigation.classList.toggle('mobile-links-active');
+      }
+
+      function goToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      function scroll() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) backToTop.style.display = "block";
+        else backToTop.style.display = "none";
+        reveal();
+      }
+
+      window.onscroll = function() {scroll()};
+  </script>
+  <script async>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        if (slides[slideIndex-1]) {
+          slides[slideIndex-1].style.display = "block";  
+        }
+        if (dots[slideIndex-1]) {
+          dots[slideIndex-1].className += " active";
+        }
+      }
+
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+
+      window.addEventListener("scroll", reveal);
+  </script>
+
+  </body>
+</html>
